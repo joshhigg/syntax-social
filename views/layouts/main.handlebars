@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Social Syntax</title>
+    </head>
+
+    <body class="secondary">
+        <header>
+            <div class="navbar primary mb-4">
+                <h1 class="mx-auto">Tech Blog</h1>
+                <ul class="list-group list-group-horizontal">
+                    <a class="list-group-item border-0 m-2 btn primary" href="/">Home</a>
+                    <a class="list-group-item border-0 m-2 btn primary" href="/profile">Dashboard</a>
+                    {{#if logged_in}}
+                    <button class="list-group-item border-0 m-2 btn primary" id="logout">Logout</button>
+                    {{else}}
+                    <a class="list-group-item border-0 m-2 btn primary" href="/login">Login</a>
+                    {{/if}}
+                </ul>
+            </div>
+        </header>
+        <main class="container secondary">{{{ body }}}</main>
+
+    </body>
+</html>
