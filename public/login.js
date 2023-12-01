@@ -13,7 +13,7 @@ const loginFormHandler = async (event) => {
   
       if (response.ok) {
           console.log('login successful!')
-        document.location.replace('/profile');
+        document.location.replace('/home');
       } else {
         alert(response.statusText);
       }
