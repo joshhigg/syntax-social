@@ -1,34 +1,44 @@
+<header>
+    <nav>
+        <button><a href="/homepage">Home</a></button>
+        <button><a href="/profile">Profile</a></button>
+        <button id="logout">Logout</button>
+    </nav>
+</header>
 
-<script id="post-template" type="text/x-handlebars-template">
-<div class="post">
-    <h3>{{username}}</h3>
-    <pre>{{code}}</pre>
-    <p>{{caption}}</p>
-    <p>Created by {{user.name}} on {{date_created}}</p>
-    <button class="like-btn">Like</button>
-    <span class="likes-count">{{likes}} Likes</span>
-    <ul class="comments">
-    {{#each comments}}
-        <li>{{this}}</li>
-    {{/each}}
-    </ul>
-    <input type="text" class="comment-input" placeholder="Add a comment...">
-    <button class="comment-btn">Comment</button>
+<div class="project">
+<div class="post-card">
+    <a href="/posts/{{post.id}}" class="post-title">{{post.title}}</a>
+    <div class="post-content">{{post.content}}</div>
+    <div class="post-user">by {{post.user.name}} - {{format_date post.date_created}}</div>
+    </p>
 </div>
-</script>
-
-<script id="posts-template" type="text/x-handlebars-template">
-{{#each posts}}
-    {{> post-template}}
-{{/each}}
-</script>
-
-{{#each (sort_posts_desc posts) as |post| }}
-    <div class="row mb-4 project">
-        <div class="col-md-5">
-            <div>{{post.user.name}} {{format_date post.date_created}}</div>
-            <div>{{post.title}}</div>
-            <div>{{post.content}}</div>
-        </div>
+<div class="comment-section">
+        <h2>
+            Comments 
+        </h2>
+        
     </div>
-{{/each}}
+    <div>
+        <button class="btn" id="comment-button">Add new comment</button>
+        {{#each post.comments as |comment|}}
+
+        <div class="comment-div">
+            <p class="comment-content">{{comment.content}}</p>
+            <p class="comment-user">- {{comment.user.name}} {{format_date comment.date_created}}</p>
+        </div>
+        {{/each}}
+
+        <div id="createCommentModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form class="mx-auto post-form">
+                    <label>Enter Comment:</label>
+                    <p id="currentPost" class="d-none">{{post.id}}</p>
+                    <input type="text" id="add-comment">
+                    <input type="submit" value="Create" class="btn" id="newCommentButton">
+                </form>
+            </div>
+        </div>
+
+        <script src="/post.js"></script>

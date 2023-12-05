@@ -1,9 +1,37 @@
+<header>
+    <nav>
+        <button><a href="/homepage">Home</a></button>
+        <button><a href="/profile">Profile</a></button>
+        <button id="logout">Logout</button>
+        <button id="new-button">New Post</button>
+
+    </nav>
+</header>
+
 {{#each posts as |post| }}
 <div class="row mb-4 project">
-<div class="col-md-5">
-    <div>{{post.user.name}} {{format_date post.date_created}}</div>
-    <div>{{post.title}}</div>
-    <div>{{post.content}}</div>    
-    </p>
-</div>
-{{/each}}
+    <div class="post-card">
+        <a href="/posts/{{post.id}}" class="post-title">{{post.title}}</a>
+        <div class="post-content">{{post.content}}</div>
+        <div class="post-user">by {{post.user.name}} - {{format_date post.date_created}}</div>
+        </p>
+    </div>
+    {{/each}}
+
+
+    <div id="createPostModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form class="mx-auto post-form">
+                <label>Title</label>
+                <input type="text" id="title-post">
+                <label>Content</label>
+                <textarea id="content-post" rows="4"></textarea>
+                <br><br>
+                <input type="submit" value="Create" class="btn btn-primary m-3" id="newPostButton">
+            </form>
+        </div>
+    </div>
+
+    <script src="/logout.js"></script>
+    <script src="/homepage.js"></script>

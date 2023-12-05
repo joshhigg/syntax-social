@@ -20,7 +20,7 @@ const signupFormHandler = async (event) => {
         });
     
         if (response.ok) {
-          document.location.replace('/profile');
+          document.location.replace('/homepage');
         } else {
           alert(response.statusText);
         }
