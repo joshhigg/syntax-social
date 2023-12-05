@@ -1,8 +1,10 @@
 <header>
     <nav>
-        <button><a href="/home">Home</a></button>
+        <button><a href="/homepage">Home</a></button>
         <button><a href="/profile">Profile</a></button>
         <button id="logout">Logout</button>
+        <button id="new-button">New Post</button>
+        
     </nav>
 </header>
 
@@ -10,20 +12,19 @@
 <div class="row mb-4 project">
 <div class="post-card">
     <div class="post-user">{{post.user.name}} {{format_date post.date_created}}</div>
-    <div class="post-title">{{post.title}}</div>
+    <a href="/posts/{{post.id}}" class="post-title">{{post.title}}</a>
     <div class="post-content">{{post.content}}</div>    
     </p>
 </div>
 {{/each}}
 
-<button id="new-button">New Post</button>
 
     <div id="createPostModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <form class="mx-auto post-form">
                 <label>Title</label>
-                <input type="text" id="title-post" class="form-control mb-2">
+                <input type="text" id="title-post" class="form-control mb-2"> <br>
                 <label>Content</label>
                 <input type="text" id="content-post" class="form-control mb-2">
                 <input type="submit" value="Create" class="btn btn-primary mb-3" id="newPostButton">
