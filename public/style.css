@@ -1,7 +1,10 @@
+/* Resetting default margin and ensuring full height */
 html, body {
     height: 100%;
     margin: 0;
 }
+
+/* Body styling */
 body {
     text-align: center;
     background: linear-gradient(#0437F2, black);
@@ -11,17 +14,21 @@ body {
     line-height: 1.6;
     background-attachment: fixed;
 }
+
+/* Navigation links styling */
 nav a {
     text-decoration: none;
     color: white;
 }
 
+/* Styling for two-column layout */
 .col-md-6 {
     width: 48%;
     float: left;
     margin-bottom: 20px;
 }
 
+/* Form styling */
 .form {
     max-width: 300px;
     margin: 0 auto;
@@ -44,23 +51,29 @@ label {
     border-radius: 4px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 8px 12px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    border: 1px solid #6034db;
+/* Button styling */
+.btn, .btn-primary, .post-card button, .comment-btn, nav button {
+    background-color: #071e24;
+    color: white;
+    padding: 8px 16px;
+    border: none;
     border-radius: 4px;
-    color: #ffffff;
-    background-color: #000000;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
 }
 
+/* Specific styling for primary button */
 .btn-primary {
-    background-color: #000000;
+    background-color: #071e24;
 }
+
+/* Hover effect for buttons */
+.btn:hover, .btn-primary:hover, .post-card button:hover, .comment-btn:hover, nav button:hover {
+    background-color: #008CBA;
+}
+
+/* Styling for post cards */
 .post-card {
     border: 1px solid #ccc;
     padding: 20px; 
@@ -70,47 +83,26 @@ label {
     background-color: #0829a0;
     line-height: 1.8;
 }
+
+/* Styling for post details */
 .post-user {
     font-size: 12px;
 }
+
 .post-title {
     font-size: 25px;
+    color: white;
 }
+
 .post-content {
     font-size: 16px;
 }
-.post-card div {
+
+.post-card div, .post-card h3, .post-card pre, .post-card p, .post-card button, .post-card .likes-count {
     margin-bottom: 10px;
 }
 
-.post-card h3 {
-    margin-bottom: 15px;
-}
-
-.post-card pre {
-    background-color: #f4f4f4;
-    padding: 15px;
-    border-radius: 5px;
-}
-
-.post-card p {
-    margin-bottom: 15px;
-}
-
-.post-card button {
-    background-color: #071e24;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.post-card .likes-count {
-    display: block;
-    margin-top: 10px;
-}
-
+/* Styling for comments section */
 .post-card ul.comments {
     list-style-type: none;
     padding: 0;
@@ -120,6 +112,7 @@ label {
     margin-bottom: 5px;
 }
 
+/* Styling for comment input and button */
 .comment-input {
     width: 80%;
     padding: 5px;
@@ -135,47 +128,32 @@ label {
     cursor: pointer;
     margin-top: 5px;
 }
-nav button, .post-card button, .comment-btn {
-    background-color: #071e24;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 5px;
-    transition: background-color 0.3s;
-}
 
-nav button:hover, .post-card button:hover, .comment-btn:hover {
-    background-color: #008CBA;
-}
-
-
-/* The Modal (background) */
+/* Modal styling */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
-  /* Modal Content/Box */
+/* Styling for modal content/box */
 .modal-content {
     background-color: #fefefe;
     color: #000000;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
+    width: 50%;
 }
 
-  /* The Close Button */
+/* Close button styling */
 .close {
     color: #aaa;
     float: right;
