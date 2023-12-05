@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // api/posts routes
@@ -18,30 +18,6 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-// View one post
-router.get('/:id', async (req, res) => {
-    try {
-        const postData = await Post.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User,
-                    attributes: ['name'],
-                },
-            ],
-        });
-
-        if (!postData) {
-            return res.status(404).json({ message: 'Post not found' });
-        }
-
-        const post = postData.get({ plain: true });
-
-        return res.json(post);
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
 
 // Delete post
 router.delete('/:id', withAuth, async (req, res) => {

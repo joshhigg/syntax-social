@@ -1,23 +1,15 @@
-<script id="post-template" type="text/x-handlebars-template">
-    <div class="post-card">
-        <h3>{{username}}</h3>
-        <pre>{{code}}</pre>
-        <p>{{caption}}</p>
-        <p>Created by {{user.name}} on {{date_created}}</p>
-        <button class="like-btn">Like</button>
-        <span class="likes-count">{{likes}} Likes</span>
-        <ul class="comments">
-            {{#each comments}}
-                <li>{{this}}</li>
-            {{/each}}
-        </ul>
-        <input type="text" class="comment-input" placeholder="Add a comment...">
-        <button class="comment-btn">Comment</button>
-    </div>
-</script>
+<header>
+    <nav>
+        <button><a href="/homepage">Home</a></button>
+        <button><a href="/profile">Profile</a></button>
+        <button id="logout">Logout</button>
+    </nav>
+</header>
 
-<script id="posts-template" type="text/x-handlebars-template">
-    {{#each posts}}
-        {{> post-template}}
-    {{/each}}
-</script>
+<div class="row mb-4 project">
+<div class="post-card">
+    <div class="post-user">{{post.user.name}} {{format_date post.date_created}}</div>
+    <a href="/posts/{{post.id}}" class="post-title">{{post.title}}</a>
+    <div class="post-content">{{post.content}}</div>    
+    </p>
+</div>

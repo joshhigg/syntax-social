@@ -31,7 +31,7 @@ const newPostHandler = async (event) => {
     const content = document.querySelector('#content-post').value.trim();
 
     if (title && content) {
-        const response = await fetch('./api/posts', {
+        const response = await fetch('/api/posts', {
             // Create new post using the posts route
             method: 'POST',
             body: JSON.stringify({ title, content }),
