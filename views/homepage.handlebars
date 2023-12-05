@@ -16,4 +16,20 @@
 </div>
 {{/each}}
 
-<script src="/logout.js"></script>
+<button id="new-button">New Post</button>
+
+    <div id="createPostModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form class="mx-auto post-form">
+                <label>Title</label>
+                <input type="text" id="title-post" class="form-control mb-2">
+                <label>Content</label>
+                <input type="text" id="content-post" class="form-control mb-2">
+                <input type="submit" value="Create" class="btn btn-primary mb-3" id="newPostButton">
+            </form>
+        </div>
+    </div>
+
+    <script src="/logout.js"></script>
+    <script src="/homepage.js"></script>
