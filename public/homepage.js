@@ -29,6 +29,7 @@ const newPostHandler = async (event) => {
 
     const title = document.querySelector('#title-post').value.trim();
     const content = document.querySelector('#content-post').value.trim();
+    
 
     if (title && content) {
         const response = await fetch('/api/posts', {
