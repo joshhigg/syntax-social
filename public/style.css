@@ -51,3 +51,64 @@ label {
 .btn-primary {
     background-color: #000000;
 }
+.post-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.post-card h3 {
+    margin-bottom: 5px;
+}
+
+.post-card pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.post-card p {
+    margin-bottom: 10px;
+}
+
+.post-card button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.post-card .likes-count {
+    display: block;
+    margin-top: 10px;
+}
+
+.post-card ul.comments {
+    list-style-type: none;
+    padding: 0;
+}
+
+.post-card ul.comments li {
+    margin-bottom: 5px;
+}
+
+.comment-input {
+    width: 80%;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.comment-btn {
+    background-color: #008CBA;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+}
