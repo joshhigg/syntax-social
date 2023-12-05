@@ -5,7 +5,15 @@ body {
     background-repeat: no-repeat;
     height: 100vh;
     width: 100vw;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
 }
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
 .col-md-6 {
     width: 48%;
     float: left;
@@ -53,29 +61,42 @@ label {
 }
 .post-card {
     border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
+    padding: 20px; 
+    margin: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    background-color: #0829a0;
+    line-height: 1.8;
+}
+.post-user {
+    font-size: 12px;
+}
+.post-title {
+    font-size: 25px;
+}
+.post-content {
+    font-size: 16px;
+}
+.post-card div {
+    margin-bottom: 10px;
 }
 
 .post-card h3 {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .post-card pre {
     background-color: #f4f4f4;
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
 }
 
 .post-card p {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .post-card button {
-    background-color: #4CAF50;
+    background-color: #071e24;
     color: white;
     padding: 8px 16px;
     border: none;
@@ -112,6 +133,21 @@ label {
     cursor: pointer;
     margin-top: 5px;
 }
+nav button, .post-card button, .comment-btn {
+    background-color: #071e24;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+nav button:hover, .post-card button:hover, .comment-btn:hover {
+    background-color: #008CBA;
+}
+
 
 /* The Modal (background) */
 .modal {

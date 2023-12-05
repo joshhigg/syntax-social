@@ -8,15 +8,15 @@
 
 {{#each posts as |post| }}
 <div class="row mb-4 project">
-    <div class="col-md-5">
-        <div>{{post.user.name}} {{format_date post.date_created}}</div>
-        <div>{{post.title}}</div>
-        <div>{{post.content}}</div>
-        </p>
-    </div>
-    {{/each}}
+<div class="post-card">
+    <div class="post-user">{{post.user.name}} {{format_date post.date_created}}</div>
+    <div class="post-title">{{post.title}}</div>
+    <div class="post-content">{{post.content}}</div>    
+    </p>
+</div>
+{{/each}}
 
-    <button id="new-button">New Post</button>
+<button id="new-button">New Post</button>
 
     <div id="createPostModal" class="modal">
         <div class="modal-content">
