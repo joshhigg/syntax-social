@@ -6,10 +6,39 @@
     </nav>
 </header>
 
-<div class="row mb-4 project">
+<div class="project">
 <div class="post-card">
-    <div class="post-user">{{post.user.name}} {{format_date post.date_created}}</div>
     <a href="/posts/{{post.id}}" class="post-title">{{post.title}}</a>
-    <div class="post-content">{{post.content}}</div>    
+    <div class="post-content">{{post.content}}</div>
+    <div class="post-user">by {{post.user.name}} - {{format_date post.date_created}}</div>
     </p>
 </div>
+<div class="comment-section">
+        <h2>
+            Comments 
+        </h2>
+        
+    </div>
+    <div>
+        <button class="btn" id="comment-button">Add new comment</button>
+        {{#each post.comments as |comment|}}
+
+        <div class="comment-div">
+            <p class="comment-content">{{comment.content}}</p>
+            <p class="comment-user">- {{comment.user.name}} {{format_date comment.date_created}}</p>
+        </div>
+        {{/each}}
+
+        <div id="createCommentModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form class="mx-auto post-form">
+                    <label>Enter Comment:</label>
+                    <p id="currentPost" class="d-none">{{post.id}}</p>
+                    <input type="text" id="add-comment">
+                    <input type="submit" value="Create" class="btn" id="newCommentButton">
+                </form>
+            </div>
+        </div>
+
+        <script src="/post.js"></script>

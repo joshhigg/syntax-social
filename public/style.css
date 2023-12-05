@@ -34,6 +34,10 @@ nav a {
     margin: 0 auto;
 }
 
+.d-none {
+    display: none;
+}
+
 .form-group {
     margin-bottom: 15px;
 }
@@ -77,7 +81,8 @@ label {
 .post-card {
     border: 1px solid #ccc;
     padding: 20px; 
-    margin: 20px;
+    margin: 20px auto;
+    width: 50%;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #0829a0;
@@ -86,6 +91,10 @@ label {
 
 /* Styling for post details */
 .post-user {
+    font-size: 12px;
+}
+
+.comment-user {
     font-size: 12px;
 }
 
@@ -98,8 +107,29 @@ label {
     font-size: 16px;
 }
 
+.comment-content {
+    font-size: 16px;
+}
+
+.comment-div {
+    width: 25%;
+    margin: 15px auto 0px auto;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
 .post-card div, .post-card h3, .post-card pre, .post-card p, .post-card button, .post-card .likes-count {
     margin-bottom: 10px;
+}
+
+#comment-button {
+    margin-top: 15px;
+}
+
+.comment-section {
+    border-bottom: 3px solid white;
+    width: 40%;
+    margin: auto;
 }
 
 /* Styling for comments section */
