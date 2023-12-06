@@ -7,7 +7,7 @@
     </nav>
 </header>
 
-{{#each posts as |post| }}
+{{#each (sort_posts_desc posts) as |post| }}
 <div class="row mb-4 project">
     <div class="col-md-5">
         <div>{{format_date post.date_created}}</div>
