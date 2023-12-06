@@ -42,13 +42,3 @@
         </div>
 
         <script src="/post.js"></script>
-
-{{#each (sort_posts_desc posts) as |post| }}
-    <div class="row mb-4 project">
-        <div class="col-md-5">
-            <div>{{post.user.name}} {{format_date post.date_created}}</div>
-            <div>{{post.title}}</div>
-            <div>{{post.content}}</div>
-        </div>
-    </div>
-{{/each}}
