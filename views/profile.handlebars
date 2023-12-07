@@ -21,7 +21,7 @@
 <div class="profile-header" style="background-image: url('/images/matrixBackground.webp');">
     <img src="/images/neoHeadshot.jpeg" alt="Profile Picture" class="profile-pic">
 </div>
-<div class="profile-name">Neo</div>
+<div class="profile-name">{{ name }}</div>
     <!-- User Posts Section -->
     <div class="user-posts">
         {{#each (sort_posts_desc posts) as |post| }}
