@@ -1,27 +1,30 @@
+// Import Express and Nodemailer
 const router = require('express').Router();
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
+// Set up routes for rendering login and signup pages
 router.get('/', (req, res) => {
     res.render('login');
 });
 
 router.get('/login', (req, res) => {
     res.render('login');
-})
+});
 
 router.get('/signup', (req, res) => {
-    res.render('signup')
-})
+    res.render('signup');
+});
 
+// Create a Nodemailer transporter
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     auth: {
-      user: 'socialsyntax9@gmail.com',
-        pass: 'nejp sodx gxah tumj',
-    //   email password: Nodemailer123
+        user: 'socialsyntax9@gmail.com',
+        pass: 'nejp sodx gxah tumj', // Replace with a secure app password or actual email password
     },
 });
+
   
 router.get('/send-email', async (req, res) => {
     // const userData = await User.findOne({ where: { email: req.body.email } });
@@ -41,17 +44,20 @@ router.get('/send-email', async (req, res) => {
         <p>Feel free to reach out if you have any questions or need assistance navigating the platform. We're here to support you in making the most of your Social Syntax experience.</p>
         <p>Happy coding!</p>
         `
+
     };
 
+    // Send the email and handle the response
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.error(error);
             res.send('Error sending email');
         } else {
-            console.log('email sent' + info.response);
-            res.send('email sent successfully')
+            console.log('Email sent:', info.response);
+            res.send('Email sent successfully');
         }
-    })
+    });
 });
 
+// Export the router for use in the main application
 module.exports = router;
