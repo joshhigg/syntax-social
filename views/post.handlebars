@@ -10,7 +10,7 @@
 <div class="post-card">
     <a href="/posts/{{post.id}}" class="post-title">{{post.title}}</a>
     <div class="post-content">{{post.content}}</div>
-    <div class="post-user">by {{post.user.name}} - {{format_date post.date_created}}</div>
+    <div class="post-user">posted by {{post.user.name}} on {{format_date post.date_created}}</div>
     </p>
 </div>
 <div class="comment-section">
@@ -29,16 +29,17 @@
         </div>
         {{/each}}
 
-        <div id="createCommentModal" class="modal">
-            <div class="modal-content">
+<div id="createCommentModal" class="modal">
+            <div class="create-comment-modal-content">
                 <span class="close">&times;</span>
                 <form class="mx-auto post-form">
-                    <label>Enter Comment:</label>
+                    <label for="add-comment">Enter Comment:</label>
                     <p id="currentPost" class="d-none">{{post.id}}</p>
-                    <input type="text" id="add-comment">
+                    <input type="text" id="add-comment" class="form-input">
                     <input type="submit" value="Create" class="btn" id="newCommentButton">
                 </form>
             </div>
+        </div>
         </div>
 
         <script src="/post.js"></script>
