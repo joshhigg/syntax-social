@@ -8,7 +8,7 @@
     </nav>
 </header>
 
-{{#each posts as |post| }}
+{{#each (sort_posts_desc posts) as |post| }}
 <div class="row mb-4 project">
     <div class="post-card">
         <a href="/posts/{{post.id}}" class="post-title">{{post.title}}</a>
