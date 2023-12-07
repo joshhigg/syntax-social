@@ -15,6 +15,8 @@
         <a href="/posts/{{post.id}}" class="post-title">{{post.title}}</a>
         <div class="post-content">{{post.content}}</div>
         <div class="post-user">by {{post.user.name}} - {{format_date post.date_created}}</div>
+        <button id="like-btn">Like</button>
+        <span id="like-count">0</span> likes
     </div>
 </div>
 {{/each}}
