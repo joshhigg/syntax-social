@@ -1,33 +1,41 @@
-// Import Sequelize and models
-const { User, Post, Comment } = require('./models');
+const User = require('./User');
+const Post = require('./Post');
+const Comment = require('./Comment');
 
 // Define associations between User, Post, and Comment models
+
+// User has many Posts with foreign key user_id, and onDelete set to 'Cascade'
 User.hasMany(Post, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE', // Specify the behavior on deletion
+    onDelete: 'Cascade'
 });
 
+// User has many Comments with foreign key user_id, and onDelete set to 'Cascade'
 User.hasMany(Comment, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE',
+    onDelete: 'Cascade'
 });
 
+// Post belongs to a User with foreign key user_id
 Post.belongsTo(User, {
-    foreignKey: 'user_id',
+    foreignKey: 'user_id'
 });
 
+// Post has many Comments with foreign key post_id, and onDelete set to 'Cascade'
 Post.hasMany(Comment, {
     foreignKey: 'post_id',
-    onDelete: 'CASCADE',
+    onDelete: 'Cascade'
 });
 
+// Comment belongs to a User with foreign key user_id
 Comment.belongsTo(User, {
-    foreignKey: 'user_id',
+    foreignKey: 'user_id'
 });
 
+// Comment belongs to a Post with foreign key post_id
 Comment.belongsTo(Post, {
-    foreignKey: 'post_id',
+    foreignKey: 'post_id'
 });
 
-// Export the models with associations for use in other parts of the application
+// Export the User, Post, and Comment models
 module.exports = { User, Post, Comment };
