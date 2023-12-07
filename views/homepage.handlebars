@@ -17,8 +17,8 @@
         <div class="post-content">{{post.content}}</div>
 
         <div class="post-user">posted by {{post.user.name}} on {{format_date post.date_created}}</div>
-        <button id="like-btn">Like</button>
-        <span id="like-count">0</span> likes
+        <button id="like-btn" data-buttonIndex={{post.id}}>Like</button>
+        <span id="like-count" data-countIndex={{post.id}}>0</span> likes
     </div>
 </div>
 {{/each}}

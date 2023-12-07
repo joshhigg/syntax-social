@@ -48,16 +48,19 @@ const newPostHandler = async (event) => {
     }
 };
 
-const likeButton = () => {
-    let likes = 0;
-    likes++;
-    document.getElementById('like-count').innerHTML = likes;
+let currentLikes = 0;
+const likeButton = (event) => {
+    const buttonIndex = event.target.getAttribute("data-buttonIndex");
+    const likeCount = document.querySelector(`[data-countIndex="${buttonIndex}"]`);
+    let currentLikes = parseInt(document.querySelector(`[data-countIndex="${buttonIndex}"]`).textContent);
+
+    currentLikes++;
+    likeCount.textContent = currentLikes;
 };
 
 document
-    .querySelector('#like-btn')
-    .addEventListener('click', likeButton);
-
+    .querySelectorAll('#like-btn').forEach(btn => btn.onclick = likeButton)
+    
 document
     .querySelector('#newPostButton')
     .addEventListener('click', newPostHandler);
