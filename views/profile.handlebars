@@ -1,53 +1,51 @@
-<header>
-    <nav>
-        <button><a href="/homepage">Home</a></button>
-        <button><a href="/profile">Profile</a></button>
-        <button id="logout">Logout</button>
-        <button id="new-button">New Post</button>
-    </nav>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
 
-{{#each (sort_posts_desc posts) as |post| }}
-<div class="row mb-4 project">
-    <div class="col-md-5">
-        <div>{{format_date post.date_created}}</div>
-        <div>{{post.title}}</div>
-        <div>{{post.content}}</div>
-        </p>
-        <p class="float-right">
-                {{!-- ability to edit/delete posts --}}
-                <button class="edit-button btn" data-post-id="{{post.id}}">Edit</button>
-                <button class="delete-button btn" data-id="{{post.id}}">Delete</button>
-            </p>
-    </div>
-    {{/each}}
+    <header>
+        <nav>
+            <button><a href="/homepage">Home</a></button>
+            <button><a href="/profile">Profile</a></button>
+            <button id="logout">Logout</button>
+            <button id="new-button">New Post</button>
+        </nav>
+    </header>
 
-    <div id="createPostModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form class="mx-auto post-form">
-                <label>Title</label>
-                <input type="text" id="title-post">
-                <label>Content</label>
-                <textarea id="content-post" rows="4"></textarea>
-                <br><br>
-                <input type="submit" value="Create" class="btn btn-primary" id="newPostButton">
-            </form>
-        </div>
+    
+<div class="profile-header" style="background-image: url('/images/matrixBackground.webp');">
+    <img src="/images/neoHeadshot.jpeg" alt="Profile Picture" class="profile-pic">
+</div>
+
+    <!-- User Posts Section -->
+    <div class="user-posts">
+        {{#each (sort_posts_desc posts) as |post| }}
+            <div class="row mb-4 project">
+                <div class="col-md-5">
+                    <div>{{format_date post.date_created}}</div>
+                    <div>{{post.title}}</div>
+                    <div>{{post.content}}</div>
+                    </p>
+                    <p class="float-right">
+                        <button class="edit-button btn" data-post-id="{{post.id}}">Edit</button>
+                        <button class="delete-button btn" data-id="{{post.id}}">Delete</button>
+                    </p>
+                </div>
+            </div>
+        {{/each}}
     </div>
-    <div id="editPostModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form class="mx-auto post-form">
-                <label>Edit Title</label>
-                <input type="text" id="edit-title-post" class="form-control mb-2">
-                <label>Edit Content</label>
-                <textarea id="edit-content-post" rows="4"></textarea>
-                <br><br>
-                <input type="submit" value="Save Changes" class="btn btn-primary" id="saveChangesButton">
-            </form>
-        </div>
-    </div>
+
+
+    <div id="createPostModal" class="modal"></div>
+
+    <div id="editPostModal" class="modal"></div>
 
     <script src="/logout.js"></script>
     <script src="/profile.js"></script>
+</body>
+</html>

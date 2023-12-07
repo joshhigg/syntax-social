@@ -54,6 +54,30 @@ label {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+/* Profile Styiling */
+.profile-header {
+    background-size: cover;
+    background-position: center;
+    height: 300px; 
+    position: relative;
+    text-align: center;
+    color: #fff; 
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 150px; 
+    height: 150px;
+    border: 5px solid #fff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.user-posts {
+    padding: 20px;
+}
 
 /* Button styling */
 .btn, .btn-primary, .post-card button, .comment-btn, nav button {
