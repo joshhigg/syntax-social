@@ -46,30 +46,17 @@ const newPostHandler = async (event) => {
             alert('Failed to create post')
         }
     }
-
-
-    // *** Like button
-    const likeButton = document.createElement('button');
-    likeButton.textContent = 'like';
-
-    const likeCount = document.createElement('p');
-
-    let likes = 0;
-
-    const increaseLikes = () => {
-        likes++;
-        if (likes === 0) {
-            likeCount.innerHTML = `${likes} like`;
-        } else {
-            likeCount.innerHTML = `${likes} likes`;
-        };
-    };
-
-    likeButton.addEventListener('click', increaseLikes);
-
-    // ***
-
 };
+
+const likeButton = () => {
+    let likes = 0;
+    likes++;
+    document.getElementById('like-count').innerHTML = likes;
+};
+
+document
+    .querySelector('#like-btn')
+    .addEventListener('click', likeButton);
 
 document
     .querySelector('#newPostButton')
