@@ -1,3 +1,4 @@
+<h1>SOCIAL Syntax</h1>
 <header>
     <nav>
         <!-- Navigation buttons -->
@@ -14,26 +15,28 @@
         <!-- Post details -->
         <a href="/posts/{{post.id}}" class="post-title">{{post.title}}</a>
         <div class="post-content">{{post.content}}</div>
-        <div class="post-user">by {{post.user.name}} - {{format_date post.date_created}}</div>
+
+        <div class="post-user">posted by {{post.user.name}} on {{format_date post.date_created}}</div>
         <button id="like-btn">Like</button>
         <span id="like-count">0</span> likes
     </div>
 </div>
 {{/each}}
 
-<!-- Modal for creating a new post -->
-<div id="createPostModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <form class="mx-auto post-form">
-            <!-- Form for creating a new post -->
-            <label>Post Title</label>
-            <input type="text" id="title-post">
-            <label>What's on your mind?</label>
-            <textarea id="content-post" rows="4"></textarea>
-            <br><br>
-            <input type="submit" value="Create" class="btn btn-primary m-3" id="newPostButton">
-        </form>
+
+    <div id="createPostModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form class="mx-auto post-form">
+                <label>Title</label>
+                <input type="text" id="title-post">
+                <label>Content</label>
+                <textarea id="content-post" rows="4"></textarea>
+                <br><br>
+                <input type="submit" value="Create" class="btn btn-primary m-3" id="newPostButton">
+            </form>
+        </div>
+
     </div>
 </div>
 

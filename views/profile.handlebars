@@ -21,15 +21,15 @@
 <div class="profile-header" style="background-image: url('/images/matrixBackground.webp');">
     <img src="/images/neoHeadshot.jpeg" alt="Profile Picture" class="profile-pic">
 </div>
-
+<div class="profile-name">Neo</div>
     <!-- User Posts Section -->
     <div class="user-posts">
         {{#each (sort_posts_desc posts) as |post| }}
             <div class="row mb-4 project">
-                <div class="col-md-5">
-                    <div>{{format_date post.date_created}}</div>
-                    <div>{{post.title}}</div>
-                    <div>{{post.content}}</div>
+                <div class="post-card">
+                    <div>Posted on {{format_date post.date_created}}</div>
+                    <div class="post-title">{{post.title}}</div>
+                    <div class="post-content">{{post.content}}</div>
                     </p>
                     <p class="float-right">
                         <button class="edit-button btn" data-post-id="{{post.id}}">Edit</button>
@@ -71,4 +71,5 @@
     <script src="/logout.js"></script>
     <script src="/profile.js"></script>
 </body>
+<h1>SOCIAL Syntax</h1>
 </html>
