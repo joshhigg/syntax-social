@@ -1,26 +1,44 @@
-<header>
-    <nav>
-        <button><a href="/homepage">Home</a></button>
-        <button><a href="/profile">Profile</a></button>
-        <button id="logout">Logout</button>
-        <button id="new-button">New Post</button>
-    </nav>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
 
-{{#each (sort_posts_desc posts) as |post| }}
-<div class="row mb-4 project">
-    <div class="col-md-5">
-        <div>{{format_date post.date_created}}</div>
-        <div>{{post.title}}</div>
-        <div>{{post.content}}</div>
-        </p>
-        <p class="float-right">
-                {{!-- ability to edit/delete posts --}}
-                <button class="edit-button btn" data-post-id="{{post.id}}">Edit</button>
-                <button class="delete-button btn" data-id="{{post.id}}">Delete</button>
-            </p>
+    <header>
+        <nav>
+            <button><a href="/homepage">Home</a></button>
+            <button><a href="/profile">Profile</a></button>
+            <button id="logout">Logout</button>
+            <button id="new-button">New Post</button>
+        </nav>
+    </header>
+
+    
+<div class="profile-header" style="background-image: url('/images/matrixBackground.webp');">
+    <img src="/images/neoHeadshot.jpeg" alt="Profile Picture" class="profile-pic">
+</div>
+
+    <!-- User Posts Section -->
+    <div class="user-posts">
+        {{#each (sort_posts_desc posts) as |post| }}
+            <div class="row mb-4 project">
+                <div class="col-md-5">
+                    <div>{{format_date post.date_created}}</div>
+                    <div>{{post.title}}</div>
+                    <div>{{post.content}}</div>
+                    </p>
+                    <p class="float-right">
+                        <button class="edit-button btn" data-post-id="{{post.id}}">Edit</button>
+                        <button class="delete-button btn" data-id="{{post.id}}">Delete</button>
+                    </p>
+                </div>
+            </div>
+        {{/each}}
     </div>
-    {{/each}}
 
     <div id="createPostModal" class="modal">
         <div class="modal-content">
@@ -49,5 +67,8 @@
         </div>
     </div>
 
+
     <script src="/logout.js"></script>
     <script src="/profile.js"></script>
+</body>
+</html>
