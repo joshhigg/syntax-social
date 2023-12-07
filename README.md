@@ -7,7 +7,6 @@ Welcome to Social Syntax, your go-to platform for casual learning and growth as 
 1. **Create an Account**
     - Click on the "Sign Up" button to create your Social Syntax account.
     - Fill in the required information and choose a secure password.
-    - Verify your email address to activate your account.
 
 2. **Explore Topics**
     - Browse through a variety of coding and technology topics to find what interests you.
