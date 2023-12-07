@@ -2,29 +2,41 @@
     <h2>Signup</h2>
 
     <form class="form signup-form">
-    <div class="form-group">
-        <label for="name-signup">Name:</label>
-        <input class="form-input" type="text" id="user-signup" />
-    </div>
-    <div class="form-group">
-        <label for="email-signup">Email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-    </div>
-    <div class="form-group">
-        <label for="password-signup">Password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-    </div>
+        <!-- Input for name -->
         <div class="form-group">
-        <label for="password-repeat">Retype Password:</label>
-        <input class="form-input" type="password" id="password-repeat" />
-    </div>
-    <div class="form-group">
-        <button class="btn btn-primary" type="submit">Signup!</button>
-    </div>
-    <div class ="form-group">
-        <a class="btn btn-primary" type="submit" href="/login">Back to login</a>
-    </div>
+            <label for="name-signup">Name:</label>
+            <input class="form-input" type="text" id="user-signup" />
+        </div>
+
+        <!-- Input for email -->
+        <div class="form-group">
+            <label for="email-signup">Email:</label>
+            <input class="form-input" type="text" id="email-signup" />
+        </div>
+
+        <!-- Input for password -->
+        <div class="form-group">
+            <label for="password-signup">Password:</label>
+            <input class="form-input" type="password" id="password-signup" />
+        </div>
+
+        <!-- Input to retype password -->
+        <div class="form-group">
+            <label for="password-repeat">Retype Password:</label>
+            <input class="form-input" type="password" id="password-repeat" />
+        </div>
+
+        <!-- Signup button -->
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Signup!</button>
+        </div>
+
+        <!-- Back to login link -->
+        <div class="form-group">
+            <a class="btn btn-primary" type="submit" href="/login">Back to login</a>
+        </div>
     </form>
 </div>
-</div>
+
+<!-- JavaScript file for signup-related functionality -->
 <script src="/signup.js"></script>

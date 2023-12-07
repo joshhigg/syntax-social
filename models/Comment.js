@@ -1,8 +1,11 @@
+// Import Sequelize and connection
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Comment extends Model { }
+// Create Comment model by extending Sequelize's Model class
+class Comment extends Model {}
 
+// Initialize Comment model with columns and data types
 Comment.init(
     {
         id: {
@@ -18,7 +21,7 @@ Comment.init(
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,
-            defaultValue: DataTypes.NOW
+            defaultValue: DataTypes.NOW,
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -44,4 +47,5 @@ Comment.init(
     }
 );
 
+// Export Comment model for use in other parts of the application
 module.exports = Comment;

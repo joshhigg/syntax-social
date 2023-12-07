@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 
 class Post extends Model { }
 
+// Define the Post model with its properties
 Post.init(
     {
         id: {
@@ -34,11 +35,12 @@ Post.init(
     },
     {
         sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'post',
+        timestamps: false, // Disable timestamps
+        freezeTableName: true, // Use the model's name as the table name
+        underscored: true, // Use snake_case for column names
+        modelName: 'post', // Set the model name
     }
 );
 
+// Export the Post model
 module.exports = Post;

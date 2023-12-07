@@ -291,3 +291,9 @@ input#title-post:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+#like-btn {
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+}

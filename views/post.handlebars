@@ -1,28 +1,31 @@
 <header>
     <nav>
+        <!-- Navigation buttons -->
         <button><a href="/homepage">Home</a></button>
         <button><a href="/profile">Profile</a></button>
         <button id="logout">Logout</button>
     </nav>
 </header>
 
-<div class="project">
-<div class="post-card">
-    <a href="/posts/{{post.id}}" class="post-title">{{post.title}}</a>
-    <div class="post-content">{{post.content}}</div>
-    <div class="post-user">posted by {{post.user.name}} on {{format_date post.date_created}}</div>
-    </p>
-</div>
-<div class="comment-section">
-        <h2>
-            Comments 
-        </h2>
-        
-    </div>
-    <div>
-        <button class="btn" id="comment-button">Add new comment</button>
-        {{#each post.comments as |comment|}}
 
+    <div class="post-card">
+        <!-- Post details -->
+        <a href="/posts/{{post.id}}" class="post-title">{{post.title}}</a>
+        <div class="post-content">{{post.content}}</div>
+        <div class="post-user">posted by {{post.user.name}} on {{format_date post.date_created}}</div>
+    </div>
+
+    <!-- Comment section -->
+    <div class="comment-section">
+        <h2>Comments</h2>
+    </div>
+
+    <div>
+        <!-- Button to add new comment -->
+        <button class="btn" id="comment-button">Add new comment</button>
+
+        {{#each post.comments as |comment|}}
+        <!-- Display existing comments -->
         <div class="comment-div">
             <p class="comment-content">{{comment.content}}</p>
             <p class="comment-user">- {{comment.user.name}} {{format_date comment.date_created}}</p>
@@ -31,6 +34,7 @@
 
 <div id="createCommentModal" class="modal">
             <div class="create-comment-modal-content">
+
                 <span class="close">&times;</span>
                 <form class="mx-auto post-form">
                     <label for="add-comment">Enter Comment:</label>
@@ -42,4 +46,7 @@
         </div>
         </div>
 
+        <!-- JavaScript file for post-related functionality -->
         <script src="/post.js"></script>
+    </div>
+</div>
