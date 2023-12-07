@@ -15,23 +15,33 @@ const signupFormHandler = async (event) => {
   }
 
   // Check if name, email, and password are provided
-  if (name && email && password) {
+  if (name && email && password && passwordRepeat) {
       // Fetch request to the user registration route with user information
-      const response = await fetch('/api/users', {
+      const response1 = await fetch('/api/users', {
           method: 'POST',
           body: JSON.stringify({ name, email, password }),
           headers: { 'Content-Type': 'application/json' },
       });
 
       // Check if the user registration was successful
-      if (response.ok) {
-          // Redirect the user to the homepage after successful registration
-          document.location.replace('/homepage');
+      if (response1.ok) {
+          const response2 = await fetch('/api/users/send-email', {
+              method: 'POST',
+              body: JSON.stringify({ email }),
+              headers: { 'Content-Type': 'application/json' },
+          });
+
+          if (response2.ok) {
+              document.location.replace('/homepage');
+          } else {
+              alert('failed to send email from the signup.js page')
+          }
       } else {
           // Display an alert if registration fails
-          alert(response.statusText);
+          alert(response1.statusText);
       }
-  }
+    };
+
 };
 
 // Add event listener to the signup form submit button
