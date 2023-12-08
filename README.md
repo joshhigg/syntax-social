@@ -2,6 +2,16 @@
 
 Welcome to Social Syntax, your go-to platform for casual learning and growth as developers. Connect with fellow coding enthusiasts, share your knowledge, and explore the world of technology together. Whether you're a seasoned developer or just starting your coding journey, Social Syntax is the place to be.
 
+## Link
+[Social Syntax](https://social-syntax-1f22eb865286.herokuapp.com/)
+
+## Screenshots
+<img width="952" alt="image" src="https://github.com/joshhigg/syntax-social/assets/136753578/1789d530-4f92-4f69-8e51-4054495cc119">
+<img width="948" alt="image" src="https://github.com/joshhigg/syntax-social/assets/136753578/384b5c1a-21e3-48da-8314-1dfff49963e4">
+<img width="955" alt="image" src="https://github.com/joshhigg/syntax-social/assets/136753578/3ca8ba70-6357-4667-9d76-38641cba7001">
+
+
+
 ## Getting Started
 
 1. **Create an Account**
@@ -18,10 +28,13 @@ Welcome to Social Syntax, your go-to platform for casual learning and growth as 
     - Follow other developers, like their posts, and leave comments to engage in conversations.
     - Build your network and learn from experienced developers in the community.
 
-## Features
-1. Uses NodeMailer to send a welcome email to new users!
+## Features/Tech Stack
+1. Uses the npm package, NodeMailer, to send a welcome email to new users
 2. Uses Handlebars to dynamically show new user posts from newest to oldest
 3. Uses mysql to store databases of user posts and comments
+4. Uses MVC structure to organize files with separation of concerns
+5. Uses express-session and cookies for authentication
+6. Deployed using Heroku
 
 ## Community Guidelines
 
